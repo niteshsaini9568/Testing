@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") -%>
+
+<% if(listingsCategorie && listingsCategorie.length) {%>
+
+
+<h3 style="margin-top: 30px;"><%= id%></h3>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    
+    <%  for(let listing of listingsCategorie){ %>
+        <a href="/listings/<%= listing._id %>" class="listing-link">
+            <div class="card col listing-card" >
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 18rem;">
+                
+                <div class="card-body mt-2">
+                    <p class="card-text">
+                       <b> <%= listing.title %> </b><br>
+                        &#8377;<%=listing.price.toLocaleString("en-IN") %>/night
+                        <i class="tax-info"> &nbsp;&nbsp; +18% GST </i>
+                    
+                    </p>
+                </div>
+                <div class="card-img-overlay"></div>
+                
+            </div>   
+        </a>     
+
+    <% } %>  
+    </div>  
+    <% } 
+     else { %>
+        <h1 style="margin-top: 15px;">No Listings are added on the <%= id%> !!</h1>
+        <% } %> 

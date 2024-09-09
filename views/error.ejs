@@ -1,0 +1,16 @@
+<%- layout("/layouts/boilerplate") %>
+<style>
+    @media (max-width : 575px) {
+        .offset-2{
+        position: relative ;
+        left: -80px ;
+    }
+    }
+</style>
+<body>
+    <div class="row mt-3">
+        <div class="alert alert-danger col-8 offset-2 " role="alert">
+           <p><%= message %></p>
+        </div>
+    </div>
+</body>
